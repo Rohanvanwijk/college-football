@@ -1,12 +1,12 @@
 <template>
     <div class="game">
         <h1>{{getTeam}}</h1>
-        <div class="game-container" v-if="games">
-            <div class="game-item" v-for="game in games" :key="game.id">
+        <div class="game__container" v-if="games">
+            <div class="game__item" v-for="game in games" :key="game.id">
                 <h3 v-if="!game.attendance">{{game.home_team}} - {{game.away_team}}</h3>
                 <h3 v-else>{{game.home_team}} ({{game.home_points}}) - {{game.away_team}} ({{game.away_points}})</h3>
-                <label>Season: {{game.season}}</label>
-                <div class="details" v-if="game.attendance">
+                <span class="game__highlight">Season: {{game.season}}</span>
+                <div class="game__details" v-if="game.attendance">
                     <p>Venue: {{game.venue}}</p>
                     <p>Attendance: {{game.attendance}}</p>
                     <p>Season type: {{game.season_type}}</p>
@@ -71,18 +71,30 @@ export default {
   }
 </script>
 <style lang="scss" scoped>
-.game-container {
+.game {
+    &__container {
     display: flex;
     flex-wrap: wrap;
     max-width: 800px;
     margin: 0 auto;
     justify-content: center;
-}
-.game-item {
+    }
+    &__item {
     padding: 10px;
     margin: 10px;
     border: 1px dashed antiquewhite;
+    }
+    &__details {
+        border-top: 1px solid antiquewhite;
+    }
+    &__highlight {
+        font-weight: bold;
+        color: #42b983;
+        margin: 10px 0;
+        display: block;
+    }
 }
+
 .button {
     padding: 10px;
     margin: 20px;

@@ -6,7 +6,7 @@
 
 <script>
 // @ is an alias to /src
-import Grid from '@/components/grid.vue'
+import Grid from '@/components/Grid.vue'
 
 export default {
   name: 'Home',
