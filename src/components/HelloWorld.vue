@@ -44,7 +44,7 @@ export default {
 
   },
   data: function() {
-    teams: 3
+    3
   }
 }
 </script>

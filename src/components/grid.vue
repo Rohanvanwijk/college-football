@@ -2,8 +2,9 @@
     <div class="grid">
         <h1>All teams</h1>
         <div class="grid-view">
-            <div class="grid-item" v-for="team in teams" :key="team.id">
-            <h2>{{team.school}}</h2>
+                <div class="grid-item" v-for="team in teams" :key="team.id">
+                <h2>{{team.school}}</h2>
+                <router-link :to="{ name: 'team', params: { team: team.school }}">View game</router-link>
             </div>
         </div>
     </div>
@@ -31,6 +32,7 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .grid-item {
     background-color: antiquewhite;
