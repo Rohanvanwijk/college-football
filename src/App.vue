@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <h1>College Football</h1>
+    <label>Build by Rohan van Wijk</label>
+    <hr>
     <div id="nav">
       <router-link to="/">Home</router-link>
     </div>
@@ -27,5 +30,8 @@
       color: #42b983;
     }
   }
+}
+hr {
+    border: 1px solid antiquewhite;
 }
 </style>

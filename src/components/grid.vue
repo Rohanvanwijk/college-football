@@ -23,6 +23,9 @@ export default {
     axios
     .get("https://api.collegefootballdata.com/teams")
     .then(response => (this.teams = response.data))
+    .catch(function(error){
+        console.log(error);
+    });
   }
 }
 </script>
